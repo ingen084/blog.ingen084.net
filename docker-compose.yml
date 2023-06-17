@@ -1,0 +1,10 @@
+version: "3"
+services:
+  service_jekyll:
+    image: jekyll/jekyll:latest
+    container_name: local_jekyll
+    volumes:
+      - .:/srv/jekyll
+    command: jekyll serve --force_polling --livereload --verbose --trace --config _config.yml,_config.local.yml
+    ports:
+      - "4000:4000"

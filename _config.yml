@@ -30,13 +30,13 @@ defaults:
       permalink: /posts/:path
 
   # for multilingual posts
-  - scope:
-      # to separate language posts folders
-      path: "*/_posts"
-    values:
-      hidden: true
-      layout: "post"
-      permalink: /:path
+  # - scope:
+  #     # to separate language posts folders
+  #     path: "*/_posts"
+  #   values:
+  #     hidden: true
+  #     layout: "post"
+  #     permalink: /:path
 
   # example: enable setting for all pages. You may still need to enable some setting from _data/conf/posts.yml or _data/conf/main.yml
   # - scope:
@@ -72,7 +72,7 @@ whitelist:
 ###########################################################
 # jekyll-paginate (https://jekyllrb.com/docs/pagination/)
 ###########################################################
-paginate_path: "/tabs/blog/:num"
+paginate_path: "/:num"
 # number of post per page
 # make sure this matches with post_query_paginator_post_per_page in _data/conf/posts.yml
 paginate: 5
