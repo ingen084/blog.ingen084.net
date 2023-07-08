@@ -26,3 +26,6 @@
 - copy_link:
   icon: "fa fa-link"
   url: ""
+- fediverse:
+  icon: "fa fa-link"
+  url: ""
