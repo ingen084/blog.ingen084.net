@@ -19,17 +19,22 @@ date: 2023-10-29 00:00:00 +09:00
 せっかくなので全く同じ場所･タイミングで撮って比較してみました。  
 センサーの比較ではなくAF含めての比較ということで、設定は別にしてあります。
 
-**左が TORQUE 5G 右が TORQUE G06 です。**
+**１枚目が TORQUE 5G ２枚目が TORQUE G06 です。**
+
+---
 
 <div class="image-compare">
   <img src="https://gyazo.ingen084.net/data/4cc2482290969ce0996d80ee79ecc679.png" alt="" />
   <img src="https://gyazo.ingen084.net/data/adb81e86212c9e83b7b6ee8751493b07.png" alt="" />
 </div>
 
+---
+
 <div class="image-compare">
   <img src="https://gyazo.ingen084.net/data/a7d5d6f866edc425b63c5db62ae6a9e0.png" alt="" />
   <img src="https://gyazo.ingen084.net/data/0ca623d1bf68f44831c32275d15433f3.png" alt="" />
 </div>
+---
 
 5Gでは暗い場面では色域が狭く白飛びしており、明るい場所でも不自然に鮮やかな色味が付いていることがわかります。  
 また全体がぼやけてしまっています。
