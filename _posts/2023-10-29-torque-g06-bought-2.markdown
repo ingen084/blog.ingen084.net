@@ -21,12 +21,12 @@ date: 2023-10-29 00:00:00 +09:00
 
 **左が TORQUE 5G 右が TORQUE G06 です。**
 
-<div id="image-compare">
+<div class="image-compare">
   <img src="https://gyazo.ingen084.net/data/4cc2482290969ce0996d80ee79ecc679.png" alt="" />
   <img src="https://gyazo.ingen084.net/data/adb81e86212c9e83b7b6ee8751493b07.png" alt="" />
 </div>
 
-<div id="image-compare">
+<div class="image-compare">
   <img src="https://gyazo.ingen084.net/data/a7d5d6f866edc425b63c5db62ae6a9e0.png" alt="" />
   <img src="https://gyazo.ingen084.net/data/0ca623d1bf68f44831c32275d15433f3.png" alt="" />
 </div>
