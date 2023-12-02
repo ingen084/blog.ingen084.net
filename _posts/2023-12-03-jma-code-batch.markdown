@@ -5,7 +5,7 @@ tags: []
 date: 2023-12-03 00:00:00 +09:00
 ---
 
-こんにちは。  
+こんばんは。  
 これは [防災アプリ開発 Advent Calendar 2023](https://adventar.org/calendars/9301) の3日目の記事です。
 
 ## はじめに
