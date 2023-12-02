@@ -202,14 +202,14 @@ public partial class CsvDictionaryGenerator : ISourceGenerator
     {
         using var reader = new StringReader(csvText);
 
-        sb.AppendLine($"        public static System.Collections.Generic.IReadOnlyDictionary<{keyType}, {valueType}> {dictionaryName} {{ get; }} = new System.Collections.Generic.Dictionary<{keyType}, {valueType}>(){{");
+        sb.AppendLine($"        public static System.Collections.Generic.IReadOnlyDictionary<{keyType}, {valueType}> {dictionaryName} \{\{ get; }} = new System.Collections.Generic.Dictionary<{keyType}, {valueType}>()\{\{");
 
         while (true)
         {
             var line = reader.ReadLine();
             if (line == null) break;
             var fields = line.Split(',');
-            sb.AppendLine($"            {{ {string.Format(keyFormat, fields)}, {string.Format(valueFormat, fields)} }},");
+            sb.AppendLine($"            \{\{ {string.Format(keyFormat, fields)}, {string.Format(valueFormat, fields)} }},");
         }
 
         sb.AppendLine("        };");
