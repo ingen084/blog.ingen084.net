@@ -34,6 +34,7 @@ date: 2023-10-29 00:00:00 +09:00
   <img src="https://gyazo.ingen084.net/data/a7d5d6f866edc425b63c5db62ae6a9e0.png" alt="" />
   <img src="https://gyazo.ingen084.net/data/0ca623d1bf68f44831c32275d15433f3.png" alt="" />
 </div>
+
 ---
 
 5Gでは暗い場面では色域が狭く白飛びしており、明るい場所でも不自然に鮮やかな色味が付いていることがわかります。  
