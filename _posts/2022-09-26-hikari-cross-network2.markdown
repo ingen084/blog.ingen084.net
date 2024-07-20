@@ -7,6 +7,9 @@ date: 2022-09-26 00:00:00 +09:00
 permalink: /posts/20220926-hikari-cross-network2
 ---
 
+> 大幅にシンプルになった[2024年版の記事](2024-07-21-hikari-cross-systemd-networkd)があります。
+> こちらもどうぞ！
+
 [ISP選び編はこちら](20220811-hikari-cross-network1)
 
 こうしてISPを選び、家までNGNのネットワークが来たところで、いよいよルーターの構築をします。  
