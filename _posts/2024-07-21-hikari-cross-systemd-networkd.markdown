@@ -1,5 +1,5 @@
 ---
-title: "【24.04LTS版】 systemd-networkd で光クロスのLinuxルーターを作る"
+title: "【24.04LTS最新版】systemd-networkd で光クロスのLinuxルーターを作る"
 category: "雑記"
 tags: ["ネットワーク", "光クロス", "Linux"]
 date: 2024-07-21 00:00:00 +09:00
