@@ -51,6 +51,9 @@ ST-S333ESJ と SRF-T335 については Sony 製のラジオです。
 ミキサーに繋げられるようにしているのは災害発生時などに複数の放送を同時に視聴するためです。  
 後述する広帯域受信機も使用することで3つの放送を同時に視聴することができます。(聞き取れるかは別として)やったね！
 
+大体は良い感じ(自動時刻合わせ機能はマジでよくできてる)なのですが個人的なデメリットがあります。  
+それは音量の調整が可変抵抗なことです。仕方ないことではあるんですが、そのせいで小さめの音量にすると左右のボリュームが異なる状況が発生してしまいます。ある程度音を大きくすれば気にしなくなりますが、寝る前に小さい音量で聴いていたりすると少し気になります。
+
 ### [ST-S333ESJ](https://audio-heritage.jp/SONY-ESPRIT/tuner/st-s333esj.html)
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">僭越ながら my new gear... させていただきます<br>(オープンラック買うの下手くそでサイドウッドわざわざ外してるのはないしょ) <a href="https://t.co/QHWrStsmKQ">pic.twitter.com/QHWrStsmKQ</a></p>&mdash; ingen084 (@ingen084) <a href="https://twitter.com/ingen084/status/1840083673334591637?ref_src=twsrc%5Etfw">September 28, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
