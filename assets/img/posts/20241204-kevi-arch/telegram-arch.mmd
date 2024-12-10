@@ -1,0 +1,47 @@
+sequenceDiagram
+  participant subs as TelegramSubscriber
+  participant service as TelegramProvideService
+  participant jma as JmaXmlPublisher
+  participant dmdata as DmdataPublisher
+
+  Note over subs,dmdata: 初期化前
+  subs ->> service: 必要なカテゴリを Subscribe
+
+  Note over subs,dmdata: 受信開始
+  jma ->> service: 対応カテゴリ確認
+  dmdata ->> service: 
+
+  service ->> service: 利用できるカテゴリごとに Publisher にアサイン
+  service ->> jma: 取得処理開始
+  service ->> dmdata: 
+
+  jma ->> service: 取得開始+過去電文通知
+  dmdata ->> service: 
+
+  service ->> subs: 整理してカテゴリごとに通知
+
+  Note over subs,dmdata: 切断時
+  dmdata ->> service: 切断通知
+  service ->> subs: 該当カテゴリが一時的に<br>利用できなくなったことを通知
+
+  loop カテゴリごと
+    jma ->> service: 次に優先度の高い情報ソースの<br>対応カテゴリ取得
+    alt 対応していた場合
+      service ->> service: 付け替え
+      service ->> jma: 受信開始
+      jma ->> service: 取得開始+過去電文通知
+      service ->> subs: 整理してカテゴリごとに通知
+    else 対応していない場合
+      service ->> subs: 該当カテゴリが完全に<br>利用できなくなったことを通知
+    end
+  end
+
+  Note over subs,dmdata: 接続再開時
+  dmdata ->> service: 再開通知
+  loop カテゴリごと
+    service ->> service: 優先度に応じて各カテゴリの情報を差し替え
+    service ->> dmdata: 受信開始
+    service ->> jma: 停止
+  end
+  dmdata ->> service: 取得開始+過去電文通知
+  service ->> subs: 整理してカテゴリごとに通知
