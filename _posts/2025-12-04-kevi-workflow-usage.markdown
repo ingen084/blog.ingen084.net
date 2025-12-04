@@ -71,6 +71,7 @@ KyoshinEewViewer for ingen には、地震や津波などの災害情報を受�
 
 ### 基本構文
 
+{% raw %}
 ```text
 {{変数名}}                          # 変数の参照
 {{if 条件}}...{{end}}               # 条件分岐
@@ -79,6 +80,7 @@ KyoshinEewViewer for ingen には、地震や津波などの災害情報を受�
 {{数値 | math.format "F1"}}         # 数値フォーマット
 {{日時 | date.to_string "%H:%M"}}   # 日時フォーマット
 ```
+{% endraw %}
 
 ### アプリ内蔵のデフォルトテンプレート
 
@@ -88,6 +90,7 @@ KyoshinEewViewer for ingen には、地震や津波などの災害情報を受�
 
 **タイトル：**
 
+{% raw %}
 ```text
 {{if IsCancelled; "[取消] "; end
 if IsReplay; "[リプレイ] "; end
@@ -96,9 +99,11 @@ if IsFinal; "(最終"; else; "("; end
 SerialNo | math.format "D2"
 "報)"}}
 ```
+{% endraw %}
 
 **本文：**
 
+{% raw %}
 ```text
 {{IntensityLongName
 if IsIntensityOver; "以上"; end
@@ -119,6 +124,7 @@ if IsWarning && WarningAreaNames
 	$" 【{WarningAreaNames | array.join "・"}】"
 end}}
 ```
+{% endraw %}
 
 **出力例**:
 
@@ -129,14 +135,17 @@ end}}
 
 **タイトル：**
 
+{% raw %}
 ```text
 {{if IsCancelled; "[取消] "; end
 if IsTrainingOrTest; "[訓練/試験] "; end
 LatestInformationName}}
 ```
+{% endraw %}
 
 **本文：**
 
+{% raw %}
 ```text
 {{
 # 基本震度情報
@@ -164,6 +173,7 @@ if Hypocenter && (IsHypocenterOnly || IsDetailIntensityApplied)
 	end
 end}}
 ```
+{% endraw %}
 
 **出力例**:
 
@@ -174,6 +184,7 @@ end}}
 
 **タイトル：**
 
+{% raw %}
 ```text
 {{if TsunamiInfo && TsunamiInfo.SpecialState; "[" + TsunamiInfo.SpecialState + "] "; end
 if Level == "None"
@@ -190,9 +201,11 @@ else
 	"津波情報"
 end}}
 ```
+{% endraw %}
 
 **本文：**
 
+{% raw %}
 ```text
 {{
 case Level
@@ -250,6 +263,7 @@ if TsunamiInfo && Level != "None"
 	end
 end}}
 ```
+{% endraw %}
 
 **出力例**:
 
@@ -271,9 +285,9 @@ end}}
 **子アクション：**
 
 - 通知送信
-  - タイトル: `緊急地震速報({{SerialNo | math.format "D2"}}報)`
-  - 本文: `{{IntensityLongName}}{{if IsIntensityOver}}以上{{end}} {{EpicenterPlaceName}}`
-- VOICEVOX読み上げ: `最大{{IntensityLongName}}{{if IsIntensityOver}}以上{{end}}。第1報、緊急地震速報`
+  - タイトル: {% raw %}`緊急地震速報({{SerialNo | math.format "D2"}}報)`{% endraw %}
+  - 本文: {% raw %}`{{IntensityLongName}}{{if IsIntensityOver}}以上{{end}} {{EpicenterPlaceName}}`{% endraw %}
+- VOICEVOX読み上げ: {% raw %}`最大{{IntensityLongName}}{{if IsIntensityOver}}以上{{end}}。第1報、緊急地震速報`{% endraw %}
 
 ### 例2: 震度5弱以上で警報対応
 
@@ -307,6 +321,7 @@ end}}
 - タブ切り替え
 - VOICEVOX読み上げ（待機: ON）:
 
+  {% raw %}
   ```text
   {{if IsReplay}}リプレイ中です{{end}}
   {{if IsCancelled}}
@@ -321,6 +336,7 @@ end}}
   {{if EpicenterPlaceName}}{{EpicenterPlaceName}}{{end}}
   {{end}}
   ```
+  {% endraw %}
 
 **出力例**: `緊急地震速報 最大震度5弱以上 石川県能登地方`
 
@@ -336,6 +352,7 @@ end}}
 
 **テンプレート：**
 
+{% raw %}
 ```text
 {{
 if IsVolcano
@@ -378,6 +395,7 @@ else
 end
 }}
 ```
+{% endraw %}
 
 **出力例**: `震源・震度に関する情報 最大震度 4のやや強い地震が発生しました`
 
@@ -397,6 +415,7 @@ end
 - タブ切り替え
 - VOICEVOX読み上げ（待機: ON）:
 
+  {% raw %}
   ```text
   {{if TsunamiInfo && TsunamiInfo.SpecialState}}{{TsunamiInfo.SpecialState}}です{{end}}
   {{if Level == "None"}}
@@ -420,6 +439,7 @@ end
   {{end}}
   {{end}}
   ```
+  {% endraw %}
 
 **出力例**: `大津波警報が発表されました。直ちに高台へ避難してください。 大津波警報の対象地域は岩手県、宮城県、福島県です`
 
@@ -466,6 +486,7 @@ VOICEVOX での読み上げは音声生成ごとにその結果を一時デー�
 
 VOICEVOX読み上げ（待機: ON）で、下記内容を1行ごとにアクションとして分離する。
 
+{% raw %}
 ```text
 {{if IsTrainingOrTest}}これは訓練もしくは試験です{{end}}
 {{if IsCancelled}}地震情報は取り消されました{{else}}{{if IsTest}}ワークフローのテストです{{end}}{{end}}
@@ -475,6 +496,7 @@ VOICEVOX読み上げ（待機: ON）で、下記内容を1行ごとにアクシ�
 {{if !IsVolcano && !IsCancelled && Hypocenter}}マグニチュードは{{Hypocenter.Magnitude | math.format "F1"}}です{{end}}
 {{if !IsCancelled && Comment}}{{Comment}}{{end}}
 ```
+{% endraw %}
 
 #### 順次実行による最適化の仕組み
 
